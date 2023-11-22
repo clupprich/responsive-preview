@@ -26,4 +26,10 @@ jobs:
       if: runner.os != 'Linux'
     - name: Package
       if: success() && startsWith(github.ref, 'refs/tags/') && matrix.os == 'ubuntu-latest'
-      run: npm run package
+      run: mkdir dist && npm run package -o dist/
+    - name: Archive package artifacts
+      if: success() && startsWith(github.ref, 'refs/tags/') && matrix.os == 'ubuntu-latest'
+      uses: actions/upload-artifact@v3
+      with:
+        name: dist
+        path: dist
