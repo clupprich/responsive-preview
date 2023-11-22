@@ -24,7 +24,7 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "node ./test/runTest.js",
-    "package": "vsce package"
+    "package": "vsce package -o dist/"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.3",
