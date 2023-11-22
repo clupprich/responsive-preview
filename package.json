@@ -3,6 +3,7 @@
   "displayName": "responsive-preview",
   "description": "",
   "version": "0.0.1",
+  "repository": "github:clupprich/responsive-preview",
   "engines": {
     "vscode": "^1.84.0"
   },
@@ -12,24 +13,28 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "responsive-preview.openURL",
-      "title": "Open URL"
-    }]
+    "commands": [
+      {
+        "command": "responsive-preview.openURL",
+        "title": "Open URL"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "node ./test/runTest.js"
+    "test": "node ./test/runTest.js",
+    "package": "vsce package"
   },
   "devDependencies": {
-    "@types/vscode": "^1.84.0",
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
+    "@vscode/test-electron": "^2.3.6",
+    "@vscode/vsce": "^2.22.0",
     "eslint": "^8.52.0",
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
-    "typescript": "^5.2.2",
-    "@vscode/test-electron": "^2.3.6"
+    "typescript": "^5.2.2"
   }
 }
